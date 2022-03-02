@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Immatriculer une entreprise{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+	<link type="text/css" rel="stylesheet" href="{{ asset('bundles/craueformflow/css/buttons.css') }}" />
+	<link type="text/css" rel="stylesheet" href="{{ asset('bundles/craueformflow/css/form-flow.css') }}" />
+{% endblock %}
+
+{% block body %}
+    {# <div class="back-link">
+		<a href="{{ path('_FormFlow_start') }}">{{ 'back' | trans }}</a>
+	</div> #}
+    {# BEGIN HEADLINE #}
+	<h3>{{ 'IMMATRICULATION AU REGISTRE DU COMMERCE ET DU CRÉDIT MOBILIER' | trans }}</h3>
+    {# END HEADLINE #}
+
+	<div class="flow-steps">
+		{{- 'Etapes' | trans }}: {% include '@CraueFormFlow/FormFlow/stepList.html.twig' -%}
+	</div>
+
+    {# BEGIN FORM BLOC #}
+	{% set routeParams = app.request.query.all() | merge(app.request.attributes.get('_route_params')) %}
+	{% if flow.isAllowDynamicStepNavigation() %}
+		{% set routeParams = routeParams | craue_removeDynamicStepNavigationParameters(flow) %}
+	{% endif %}
+
+	{{ form_start(societeForm, {'action': path(app.request.attributes.get('_route'), routeParams), 'attr': {'class': 'flow-form'}}) }}
+		<fieldset>
+			<legend>{{ 'Etape' | trans }} {{ flow.getCurrentStepNumber() }}: {{ flow.getCurrentStepLabel() | trans }}</legend>
+			{{ form_errors(societeForm) }}
+
+			{# {% if flow.getCurrentStepNumber() == 3 %}
+				{{ 'bug_details_intro' | trans }}
+				<br /><br />
+				{{ form_row(societeForm.details) }}
+			{% endif %} #}
+
+			{# {% if flow.getCurrentStepNumber() == 4 %}
+				{{ 'confirmation_intro' | trans }}
+				<br />
+				<dl>
+					<dt>{{ 'title' | trans }}:</dt>
+					<dd>{{ formData.title }}</dd>
+
+					<dt>{{ 'description' | trans }}:</dt>
+					<dd>{{ formData.description | default('—') }}</dd>
+
+					<dt>{{ 'category' | trans }}:</dt>
+					<dd>{{ formData.category | trans({}, 'topicCategories') }}</dd>
+
+					<dt>{{ 'comment' | trans }}:</dt>
+					<dd>{{ formData.comment | nl2br | default('—') }}</dd>
+
+					{% if formData.isBugReport() %}
+						<dt>{{ 'details' | trans }}:</dt>
+						<dd>{{ formData.details | nl2br }}</dd>
+					{% endif %}
+				</dl>
+			{% endif %} #}
+
+			{{ form_rest(societeForm) }}
+		</fieldset>
+
+		{% include '@CraueFormFlow/FormFlow/buttons.html.twig' with {
+			craue_formflow_button_class_last: 'btn btn-primary',
+			craue_formflow_button_class_back: 'btn btn-warning',
+			craue_formflow_button_class_reset: 'btn btn-danger'
+		} 
+		%}
+	{{ form_end(societeForm) }}
+    {# END FORM BLOC #}
+	<div class="clear"></div>
+
+	<div class="data-usage-notice">{{ 'Notices' | trans }}</div>
+
+{% endblock %}
