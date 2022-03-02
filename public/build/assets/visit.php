@@ -48,7 +48,7 @@ if(trim($date_visit) == '') {
 
 
 //$address = "HERE your email address";
-$address = "staff@domain.com";
+$address = "test@domain.com";
 
 
 // Below the subject of the email

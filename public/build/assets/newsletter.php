@@ -16,7 +16,7 @@ if(trim($email_newsletter) == '') {
 	exit();
 }
 //$address = "your email address";
-$address = "staff@domain.com";
+$address = "test@domain.com";
 
 // Below the subject of the email
 $e_subject = 'New subscription request';
