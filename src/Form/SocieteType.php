@@ -3,18 +3,39 @@
 namespace App\Form;
 
 use App\Entity\Societe;
+use App\Entity\FormeJuridique;
 use Symfony\Component\Form\AbstractType;
+use App\Repository\FormeJuridiqueRepository;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class SocieteType extends AbstractType
 {
+    protected $formeJuridiqueRepository;
+
+    public function __construct(FormeJuridiqueRepository $formeJuridiqueRepository)
+    {
+        $this->formeJuridiqueRepository = $formeJuridiqueRepository;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $formeJuridiques = $this->formeJuridiqueRepository->findAll();
+        
         switch ($options['flow_step']) {
             case 1:
                 $builder
-                    ->add('formeJuridique', FormeJuridiqueType::class)
+                    ->add('formeJuridique', ChoiceType::class, [
+                        'label' => false,
+                        'choices' => $formeJuridiques,
+                        'expanded' => true, 
+                        'multiple' => false,
+                        'choice_value' => 'id',
+                        'choice_label' => function(?FormeJuridique $formeJuridique){
+                            return $formeJuridique ? $formeJuridique->getSigle().' - '.$formeJuridique->getFormeJuridique(): '';
+                        }
+                    ])
                     ->add('societeConstitueAssocieUnique', null, [
                         'label' => "La société est constituée d'un associé unique"
                     ])
@@ -66,4 +87,5 @@ class SocieteType extends AbstractType
             'data_class' => Societe::class,
         ]);
     }
+
 }

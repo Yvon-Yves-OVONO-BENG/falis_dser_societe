@@ -24,7 +24,6 @@ class DemarcheEnLigneController extends AbstractController
     #[Route('/immatriculer_entreprise', name: 'demarche_en_ligne_immatriculer_entreprise')]
     public function immatriculer_entreprise(Request $request, SocieteFlow $flow): Response
     {
-		dump($request->getSession());
 		
         $flow->setAllowDynamicStepNavigation(true);
 
@@ -33,7 +32,7 @@ class DemarcheEnLigneController extends AbstractController
 
 		// formulaire de l'étape en cours
 		$form = $flow->createForm();
-		dump($societe);
+		
 		if($flow->isValid($form))
 		{
 			$flow->saveCurrentStepData($form);
@@ -53,10 +52,12 @@ class DemarcheEnLigneController extends AbstractController
 				return $this->redirectToRoute('home');
 			}
 		}
-
+		// dump($form->createView());
+		// dd($flow);
         return $this->render('demarche_en_ligne/immatriculer_entreprise.html.twig', [
             'societeForm' => $form->createView(),
-			'flow' => $flow
+			'flow' => $flow,
+			'societe' => $societe
         ]);
     }
 

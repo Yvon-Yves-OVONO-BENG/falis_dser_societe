@@ -56,14 +56,14 @@
 <!--[if !IE]><!--><script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';}</script><!--<![endif]--> <!-- Border radius fixed IE10-->
 
 <header>
-	<div class="container">
-   	  <div class="row">
-    	<div class="span4" id="logo"><a href="{{path('home')}}"><img src="{{asset('build/assets/img/logo.png')}}" alt="Logo"></a></div>
-        <div class="span8">
-        
-        	<div id="phone" class="hidden-phone"><strong>+237 222 311 873 </strong>Lundi-Samedi : 8h30-18h</div>
-            
-            <div id="menu-top">
+		<div class="container">
+	   	  <div class="row">
+	    	<div class="col-md-4 col-sm-4" id="logo"><a href="{{path('home')}}"><img src="{{asset('build/assets/img/logo.png')}}" alt="Logo"></a></div>
+	        <div class="col-md-8 col-sm-8">
+	        
+	        	<div id="phone" class="hidden-phone"><strong>+237 222 311 873 </strong>Lundi-Samedi : 8h30-18h</div>
+	            
+	            <div id="menu-top">
             	<ul>
                 	<li><a href="{{path('home')}}" title="Home">Accueil</a> | </li>
                     <li><a href="{{path('home')}}" title="News and Events">Nouvelles &amp; Evènements</a> | </li>
@@ -71,61 +71,60 @@
                 </ul>
             </div>
 
-        </div><!-- End span8-->
-        </div><!-- End row-->
-    </div><!-- End container-->
-</header><!-- End Header-->
+	        </div><!-- End col-md-8-->
+	        </div><!-- End row-->
+	    </div><!-- End container-->
+	</header><!-- End Header-->
 
- <nav>
-	<div class="megamenu_container">
-	<a id="megamenu-button-mobile" href="#">Menu</a><!-- Menu button responsive-->
+ 	<nav>
+		<div class="megamenu_container">
+			<a id="megamenu-button-mobile" href="#">Menu</a><!-- Menu button responsive-->
     
 	<!-- Begin Mega Menu Container -->
 	<ul class="megamenu">
 		<!-- Begin Mega Menu -->
 		<li><a href="javascript:void(0)" class="drop-down">Démarches en ligne</a>
-		<!-- Begin Item -->
-            <div class="drop-down-container" style="width: 550px;">
+            <!-- Begin Item -->
+            <div class="drop-down-container">
                 <div class="row">
-                    <div class="span8">
+                    <div class="col-md-9">
                         <div class="row">
-                            <div class="span3">
+                            <div class="col-md-4">
                                 <h5><a href="{{ path('demarche_en_ligne_immatriculer_entreprise') }}"><i class="icon-save"></i>Immatriculer une entreprise</a></h5>
                             </div>
-                            <div class="span3">
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-edit"></i>Modifier une entreprise</a></h5>
-                                
                             </div>
-                            <div class="span3">
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-trash"></i>Radier une entreprise</a></h5>
-                            </div>
-                            <div class="span3">
-                                <h5><a href="#"><i class="icon-file"></i>Déposer les actes</a></h5>
                             </div>
                         </div><!-- End row -->
                         
                         <div class="row">
-                            <div class="span3">
+                            <div class="col-md-4">
+                                <h5><a href="#"><i class="icon-file"></i>Déposer les actes</a></h5>
+                            </div>
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-key"></i>Déposer les comptes annuels</a></h5>
                             </div>
-                            <div class="span3">
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-male"></i>Déclarer les bénéficiaires effectifs</a></h5>
                             </div>
-                            <div class="span3">
+
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-search"></i>Voir toutes les formalités</a></h5>
                             </div>
-                            <div class="span3">
+
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-arrow-right"></i>Le guide des formalités</a></h5>
                             </div>
-                        </div><!-- End row -->
 
-                        <div class="row">
-                            <div class="span3">
+                            <div class="col-md-4">
                                 <h5><a href="#"><i class="icon-book"></i>Registres obligatoires</a></h5>
                             </div>
                         </div><!-- End row -->
                         
-                    </div><!-- End span9 -->
+                    </div><!-- End col-md-9 -->
                 </div><!-- End row -->
             </div><!-- End Item Container -->
 		</li><!-- End Item -->
@@ -142,8 +141,8 @@
                 </ul>
             </div><!-- End dropdown normal -->
 		</li><!-- End Item -->
-
-        <li class="drop-normal"><a href="javascript:void(0)" class="drop-down">Tribunal digital</a>
+        
+		<li class="drop-normal"><a href="javascript:void(0)" class="drop-down">Tribunal digital</a>
             <div class="drop-down-container normal">
                 <ul>
                     <li><a href="about-us.html" title="About">Saisir le tribunal digital</a></li>
@@ -158,34 +157,34 @@
 		<!-- Begin Item -->
             <div class="drop-down-container" id="icon-menu">
                 <div class="row">
-                    <div class="span3 "><a href="about-us.html" title="About "><i class="icon-cart icon-3x"></i>Marketplace DSER </a></div>
+                    <div class="col-md-3 "><a href="about-us.html" title="About "><i class="icon-cart icon-3x"></i>Marketplace DSER </a></div>
 
-                    <div class="span3"><a href="about-us.html" title="Academics"><i class="icon-flag icon-3x"></i>MonJuridique Infogreffe</a></div>
+                    <div class="col-md-3"><a href="about-us.html" title="Academics"><i class="icon-flag icon-3x"></i>MonJuridique Infogreffe</a></div>
 
-                    <div class="span3"><a href="all-courses.html" title="All courses"><i class="icon-list icon-3x"></i>Portail KYC </a></div>
+                    <div class="col-md-3"><a href="all-courses.html" title="All courses"><i class="icon-list icon-3x"></i>Portail KYC </a></div>
 
-                    <div class="span3"><a href="course-detail.html" title="Course detail"><i class="icon-book icon-3x"></i>Performances financières</a></div>
+                    <div class="col-md-3"><a href="course-detail.html" title="Course detail"><i class="icon-book icon-3x"></i>Performances financières</a></div>
 
-                    <div class="span3"><a href="staff.html" title="Staff page"><i class="icon-group icon-3x"></i>DSER mes aides</a></div>
+                    <div class="col-md-3"><a href="staff.html" title="Staff page"><i class="icon-group icon-3x"></i>DSER mes aides</a></div>
 
-                    <div class="span3 "><a href="contact.html" title="Contact"><i class="icon-envelope icon-3x"></i>Monidenum</a></div>
+                    <div class="col-md-3 "><a href="contact.html" title="Contact"><i class="icon-envelope icon-3x"></i>Monidenum</a></div>
 
-                    <div class="span3"><a href="contact.html" title="Plan a visit"><i class="icon-eye-open icon-3x"></i>Certigreffe</a></div>
+                    <div class="col-md-3"><a href="contact.html" title="Plan a visit"><i class="icon-eye-open icon-3x"></i>Certigreffe</a></div>
 
-                    <div class="span3"><a href="news-events.html" title="News"><i class="icon-chevron-right icon-3x"></i>Carte prépayée</a></div>
+                    <div class="col-md-3"><a href="news-events.html" title="News"><i class="icon-chevron-right icon-3x"></i>Carte prépayée</a></div>
 
-                    <div class="span3"><a href="blog.html" title="Blog"><i class="icon-comments-alt icon-3x"></i>Call a lawyer</a></div>
+                    <div class="col-md-3"><a href="blog.html" title="Blog"><i class="icon-comments-alt icon-3x"></i>Call a lawyer</a></div>
 
-                    <div class="span3"><a href="blog_post.html" title="Single Post"><i class="icon-comments icon-3x"></i>Qonto : Dépôt de capital</a></div>
+                    <div class="col-md-3"><a href="blog_post.html" title="Single Post"><i class="icon-comments icon-3x"></i>Qonto : Dépôt de capital</a></div>
 
-                    <div class="span3"><a href="typography.html" title="Typography"><i class="icon-font icon-3x"></i>Bilan assurance</a></div>
-                    <div class="span3"><a href="javascripts.html" title="Javascript"><i class="icon-code icon-3x"></i>Liste entreprises</a></div>
+                    <div class="col-md-3"><a href="typography.html" title="Typography"><i class="icon-font icon-3x"></i>Bilan assurance</a></div>
+                    <div class="col-md-3"><a href="javascripts.html" title="Javascript"><i class="icon-code icon-3x"></i>Liste entreprises</a></div>
 
-                    <div class="span3"><a href="events_calendar.html" title="calendar"><i class=" icon-calendar icon-3x"></i>Observatoire statistiques</a></div>
+                    <div class="col-md-3"><a href="events_calendar.html" title="calendar"><i class=" icon-calendar icon-3x"></i>Observatoire statistiques</a></div>
 
-                    <div class="span3"><a href="events_calendar.html" title="calendar"><i class=" icon-calendar icon-3x"></i>Registre africain</a></div>
+                    <div class="col-md-3"><a href="events_calendar.html" title="calendar"><i class=" icon-calendar icon-3x"></i>Registre africain</a></div>
 
-                    <div class="span3"><a href="events_calendar.html" title="calendar"><i class=" icon-calendar icon-3x"></i>Découvrir nos offres</a></div>
+                    <div class="col-md-3"><a href="events_calendar.html" title="calendar"><i class=" icon-calendar icon-3x"></i>Découvrir nos offres</a></div>
                 </div><!-- End row -->
             </div><!-- End Item Container -->
 		</li><!-- End Item -->
@@ -206,11 +205,11 @@
             
                 <div class="row">
                 
-                    <div class="span6">
+                    <div class="col-md-6">
                         <div id="map_1"></div>
                     </div>
                     
-                    <div class="span6">
+                    <div class="col-md-6">
                         <h4>Addresse</h4>
                         <ul>
                             <li><i class="icon-home"></i> Biyem Assi "Ecole" Yaoundé - Immeuble Mosaïque, Cameroun</li>
@@ -223,40 +222,41 @@
                         
                         <div class="row">
                         
-                            <div class="span3">
+                            <div class="col-md-6">
                                 <h5>Questions?</h5>
                                 <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei.</p>
                                 <p><a href="contact.html" class="button_red_small">Read more</a></p>
                             </div>
                             
-                            <div class="span3">
+                            <div class="col-md-6">
                                 <h5>Apply now</h5>
                                 <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei.</p>
                                 <p><a href="contact.html" class="button_red_small" title="Contact">Contact us</a></p>
                             </div>
                             
                         </div><!-- End row -->
-                    </div><!-- End Span6 -->
+                    </div><!-- End col-md-6 -->
                 </div><!-- End row-->
             </div><!-- End Item Container -->
 		</li><!-- End Item -->
 	</ul><!-- End Mega Menu -->
-</div>
-</nav><!-- /navbar -->
+		</div>
+	</nav><!-- /navbar -->
+
     <body>
         {% block body %}{% endblock %}
 
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="span4" id="brand-footer">
-                            <p><img src="{{asset('build/assets/img/logo-footer.jpeg')}}" alt=""></p>
-                        <p>Copyright © 2022</p>
-                        <div class="twitter"><a href="#" >Suivez nous</a></div>
-                        <div class="fb"><a href="#">Suivez nous</a></div>  
-                    </div>
-                    <div class="span4" id="contacts-footer">
-                        <h4>Contacts</h4>
+	  	<div class="container">
+		  	<div class="row">
+		    	<div class="col-md-4 col-sm-4" id="brand-footer">
+                    <p><img src="{{asset('build/assets/img/logo-footer.jpeg')}}" alt=""></p>
+                    <p>Copyright © 2022</p>
+                    <div class="twitter"><a href="#" >Suivez nous</a></div>
+                    <div class="fb"><a href="#">Suivez nous</a></div>  
+		        </div>
+		        <div class="col-md-4 col-sm-4" id="contacts-footer">
+		        	<h4>Contacts</h4>
                         <ul>
                             <li><i class="icon-home"></i> Douala-Akwa, 945 Rue Docteur Bebey EYIDI (Salle des fêtes Akwa)</li>
                             <li><i class="icon-phone"></i> Téléphone: +237 233 434 781 / 699 200 192</li>
@@ -266,17 +266,16 @@
                             <li><i class="icon-envelope"></i> Email: <a href="#">dser@gmail.com</a></li>
                         </ul>
                         <hr>
-                        <h4>Newsletter</h4>
-                        <p></p>
-                        
+                        <h4>Newsletter</h4></p>
+            
                         <div id="message-newsletter"></div>
                         <form method="post"  action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
-                            <input name="email_newsletter" id="email_newsletter"  type="email" value="" placeholder="Votre Email" >
-                            <button  id="submit-newsletter" class=" button_medium" > Souscrire</button>
+                            <input name="email_newsletter" id="email_newsletter"  type="email" value="" placeholder="Votre Email" class="form-control" >
+                            <button  id="submit-newsletter" class="button_medium add-bottom-20" style="top:2px; position:relative" > Souscrire</button>
                         </form>
-                        </div>
-                    <div class="span4" id="quick-links">
-                        <h4>Liens utiles</h4>
+                    </div>
+		        <div class="col-md-4 col-sm-4" id="quick-links">
+		        	<h4>Liens utiles</h4>
                         <ul>
                             <li><a href="#" >Admissions</a></li>
                             <li><a href="#" >Administration</a></li>
@@ -294,11 +293,10 @@
                             <li><a href="#" >Courses</a></li>
                             <li><a href="#" >Departments and Programs</a></li>
                         </ul>
-                    </div>
-                    
-                </div>
-            </div>
-        </footer><!-- End footer-->
+		        </div>  
+		    </div>
+	  	</div>
+  	</footer><!-- End footer-->
         <div id="toTop"> <i class="icon-arrow-up"></i> </div>
         
         <!-- MEGAMENU --> 

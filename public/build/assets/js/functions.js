@@ -33,21 +33,15 @@ $(function() {
 $('.tooltip-test').tooltip();
 
 
-<!-- Accrodian -->	
-	var $acdata = $('.accrodian-data'),
-		$acclick = $('.accrodian-trigger');
-
-	$acdata.hide();
-	$acclick.first().addClass('active').next().show();	
-	
-	$acclick.on('click', function(e) {
-		if( $(this).next().is(':hidden') ) {
-			$acclick.removeClass('active').next().slideUp(300);
-			$(this).toggleClass('active').next().slideDown(300);
-		}
-		e.preventDefault();
-	});
-				
+ //accordion v.2.1
+function toggleChevron(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".indicator")
+        .toggleClass('toggle_plus toggle_minus');
+}
+$('#accordion').on('hidden.bs.collapse shown.bs.collapse', toggleChevron);
+//End accordion v.2.1			
 
 <!-- News stip clickable-->				   
 $(".news-strip ul li").click(function(){

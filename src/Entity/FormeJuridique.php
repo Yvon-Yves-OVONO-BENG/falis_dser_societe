@@ -115,9 +115,9 @@ class FormeJuridique
         return $this;
     }
 
-    public function __toString()
-    {
-        // return $this->getSigle().' - '.$this->getFormeJuridique();
-        return $this->getId();
-    }
+    // public function __toString()
+    // {
+    //     // return $this->getSigle().' - '.$this->getFormeJuridique();
+    //     return $this->getId();
+    // }
 }

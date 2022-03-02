@@ -24,18 +24,18 @@ class FormeJuridiqueType extends AbstractType
         $formeJuridiques = $this->formeJuridiqueRepository->findAll();
 
         $builder
-            ->add('formeJuridique', ChoiceType::class, [
-                'label' => false,
-                'choices' => $formeJuridiques,
-                'expanded' => true, 
-                'multiple' => false,
-                'choice_value' => 'id',
-                'choice_label' => function(?FormeJuridique $formeJuridique){
-                    return $formeJuridique ? $formeJuridique->getSigle().' - '.$formeJuridique->getFormeJuridique(): '';
-                }
-            ])
-            // ->add('sigle')
-            // ->add('typeSociete')
+            // ->add('formeJuridique', ChoiceType::class, [
+            //     'label' => false,
+            //     'choices' => $formeJuridiques,
+            //     'expanded' => true, 
+            //     'multiple' => false,
+            //     'choice_value' => 'id',
+            //     'choice_label' => function(?FormeJuridique $formeJuridique){
+            //         return $formeJuridique ? $formeJuridique->getSigle().' - '.$formeJuridique->getFormeJuridique(): '';
+            //     }
+            // ])
+            ->add('sigle')
+            ->add('typeSociete')
         ;
     }
 
